@@ -70,7 +70,7 @@ export class Transformer {
       }
     }
 
-    const transformer = sharp(originalImage).rotate()
+    const transformer = sharp(originalImage, {animated: true}).rotate()
 
     if (!options.format) {
       options.format = (await transformer.metadata()).format as format
